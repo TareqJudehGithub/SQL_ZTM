@@ -1,0 +1,165 @@
+SQL
+The original name of SQL is SEQUEL.
+
+ SQL is a programming language, a tool to connect and interact with the database.
+ SQL is a declarative language.
+
+ Declarative means, something is GOING to happen.. get data back from the database.
+ So we are stating something that is going to happen. We say WHAT will happen, but 
+ we have no idea how its happening.
+
+ Imperative programming. Meaning HOW it will happen. where we go line by line
+ saying how it will happen.
+
+
+Query
+ An SQL statement to look at data inside database
+
+ SQL statement (Query):
+ => clause:     SELECT *                     * is the identifier
+ => clause      FROM User
+ => clause      WHERE role = 'manager';      'manager' is the expression
+
+
+SQL Standard
+ SQL standard started back in the 80s, and till now, companies are still following
+ these standards, and even beyond.
+
+
+So again, what is a database? A structured set of data, that is structured in a 
+certain way to scale with organizations that have massive quantities of data.
+
+Before Database, we had a File Processing System (FPS). 
+FPS saves data on files, with no relationship between these files.
+
+When Database systems were introduced, organizations started immigrating from 
+FPS to DB systems.
+
+Database Management Software (DBMS) unified all solo features ub the FPS, into one centralized
+place managed by one software.. DBMS, using one language.. SQL.
+
+Database Models
+     Database Model is a way to organize and store data.
+
+     Hierarchical Model
+          Stores data in a tree-like structure
+
+                    Auth
+               ---------------
+               |              |
+             Mo              Andrei
+          --------          --------
+          |       |         |       |
+        Book1   Book1     Book1   Book1
+     
+     In Hierarchical Model, every parent can have multiple children, but but child
+     can only have 1 parent.
+
+     Examples of Hierarchical Model, is XML and HTML.
+     - If we delete a parent, all of its children will be gone as well. This kind
+       of relationship between the parent and it's children is called Tight Coupling.
+
+     - One to Many relationship
+      The Hierarchical Model supports One to Many relationship.
+       Auth (one parent) can have many children (one to many), but the children 
+       2can only have one parent.
+     
+     Network Model
+
+     - Many to Many relationship
+       Children can have multiple parents.
+     - Complex to manage data.
+
+
+     Relational Model
+     Storing data separately, in a Table Structure.
+     Table a collection of data organized in a form of columns and row.
+     Data in Relational Model, is connected through Linking tables unique 
+     identifiers in a new table.
+
+
+     What is DBMS?
+      DBMS guarantees our data is always accessible and safe.
+      - Manage the database.
+      - CRUD operations (Create, Read, Update, and Delete).
+      - Secure the database.
+      - Transactions Management. 
+     
+     The biggest companies that make DB software:
+     - Microsoft
+     - IBM
+     - MySQL
+     - ORACLE
+
+     All of these softwares use SQL, but have a slight different features.
+
+     RDMBS => Relational Database Management Software.
+
+     Dr. Edgar Frank Codd invented the RDBMS. He wrote 'Codd's12', rules 
+     to be followed to build a RDBMS.
+
+     https://www.w3resource.com/sql/sql-basic/codd-12-rule-relation.php
+
+
+     Tables
+      A collection data sorted in columns of rows.
+
+     columns
+       A collection of columns, also known as degrees.
+
+       Domain/'Constraint' of the data: meaning to specify data type in a column. For example,
+       only use Date data type in the 'date of birth' column.
+
+       Attributes: columns names (the table header). For example, id, name, email.
+
+     Rows
+      Rows, also known as Tuples, A Tuple is a single record of data.
+      A row, follows the column constraint.
+      A collection of rows, is known as 'cardinality'.
+
+
+     Primary Key (PK)
+      A unique identifier for data.
+      - PK cannot be deleted.
+
+     Foreign Key (FK)
+      Foreign key references the PK of a different, allowing a relationship to be
+      formed, in a new table.
+
+
+     OLTP (Online Transaction Processing).
+     OLTP supports day to day business. Like in Amazon.com, storing daily transactions.
+
+     OLAP Online analytical Processing.
+     To analyze collected data and study it, which leads to business decisions 
+     based on these studies.
+
+     OLTP vs OLAP Exercise.
+
+     1. Database is being used to log orders and customers.  
+          OLTP
+     2. Database is being used to figure out what new products we should offer. 
+          OLAP
+     3. Database is being used to derive statistics for reporting to the executives.
+          OLAP
+     4. Database is being used to keep track of logged in users.
+          OLTP
+
+     
+     
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

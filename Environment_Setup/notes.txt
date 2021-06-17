@@ -1,0 +1,35 @@
+
+
+SQL PostgreSQL commands from Terminal/Command Line
+ - First of all, make sure to add the sub folder /bin to Windows Environment
+   Variable - System Path.
+ 
+ Open a new Terminal:
+ $psql --version  
+     Checks if PostgreSQL was installed and configured properly on out system.
+ 
+ $psql -U postgres
+     -U specify a username. In this example, username is postgres.
+  -After entering command $psql -U postgres, the system will prompt for user
+   password. Enter 'pass123' for password.
+  
+  -If everything went well, Terminal will log into the postgres database and 
+  prompt postgres=#
+
+ postgres=#\conninfo 
+  Show current connection session, displaying information like database name, 
+  username, and localhost.
+
+ Lets create a new table:
+ postgres=#CREATE TABLE test_table ();
+ postgres=#\dt
+     -\dt displays all tables in the database.
+
+
+Install PostgreSQL client tool like ValentinaDB, or pg Admin4
+
+
+
+
+
+ 

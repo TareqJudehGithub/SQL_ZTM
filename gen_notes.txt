@@ -1,0 +1,54 @@
+What is a database?
+ - A system (hardware and software) that allows a user to store, organize, and 
+   use data.
+ - A database is a collection of data, a method of us to capture and manipulate 
+   this data.
+ - Databases capture data, so we users can use.
+
+
+Why use databases?
+Excel, thing with Excel is eventually we'll get to a point where we have too
+much data, where a spread sheet can't handle it.
+
+With DBs we can:
+- DBs can save and maintain big data.
+- Product managers have to know the product they are working on, through getting
+  data, and learn from these if their product is working properly and improve it.
+- Analyze business decisions.  
+- Web Developers storing user credentials, and data.
+
+
+ Database Management System (DBMS)
+ DBMS is a software/program that is used to manage database. 
+ DBMS receives instructions from the user, to instruct the database to make 
+ changes to the data.
+ DBMS allows users access and control to the db.
+ 
+ Relational Databases Management System (RDBMS)
+     PostgreSQL, MySQL, SQL server (MS SQL)
+     Relational db uses SQL.(Structured Query Language)
+     SQL, gives us the ability to communicate with data.
+
+
+
+ DB types:
+ The 5 DB models:
+
+     Relational DB
+          Stores data in the form of columns and rows.
+          PostgreSQL, MySQL, SQL server (MS SQL)
+          Relational db uses SQL.
+
+     Document Model DB:
+          Stores data as documents.
+          MongoDB, Couch DB, and Firebase.
+
+     Key Value DB:
+     Redis and DynamoDB.
+
+     Graph:
+     complex. Uses a graph model. 
+
+     Wide Columnar Model
+
+
