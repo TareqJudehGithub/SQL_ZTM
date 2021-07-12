@@ -52,6 +52,8 @@ Scalar function
      last_name row .
      Scalar function operate on each record independently producing multiple
      outputs.
+
+
      
      
 
