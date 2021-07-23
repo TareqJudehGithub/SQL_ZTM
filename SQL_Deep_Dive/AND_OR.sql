@@ -17,4 +17,5 @@ FROM customers
 WHERE (state = 'NY' OR state = 'OR') AND gender = 'F';
 
 -- We notice here, the parantheses combined both state statements as one, because 
--- without them, we would had to repeat AND gender = 'F' twice next to each state statement.
+-- without them, we would had to repeat AND gender = 'F' twice next to each 
+-- state statement.

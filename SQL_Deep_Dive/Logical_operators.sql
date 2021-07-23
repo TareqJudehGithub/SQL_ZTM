@@ -20,7 +20,8 @@ Operator Precedence in SQL
  A statement having multiple operators is evaluated based on the priority of
  operators.
 
-1. Parantheses  () are the most important. They will always take the first priority.
+1. Parantheses () are the most important. They will always take the first 
+   priority.
 2. Multiplication and Division comes 2nd.
 3. Subtraction and Addition is next.
 4. NOT 
