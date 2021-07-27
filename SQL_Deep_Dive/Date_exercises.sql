@@ -70,11 +70,10 @@ WHERE EXTRACT(MONTH FROM birth_date) = 11;
 * Question: Who is the oldest employee? (Use the analytical function MAX)
 */
 
-SELECT 	emp_no,
-		first_name || ' ' || last_name AS full_name,
- 		MAX(EXTRACT(YEAR FROM AGE(birth_date))) AS emp_age
-FROM employees
-GROUP BY 1, 2
-LIMIT 1;
+SELECT 	MAX(AGE(birth_date)) AS age
+FROM employees;
+
+
+SELECT MAX(AGE(birth_date)) FROM employees;
 
 
