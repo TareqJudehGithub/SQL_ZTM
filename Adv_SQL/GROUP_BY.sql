@@ -8,7 +8,7 @@ GROUB BY
  - When we GROUP BY, we apply the function per group, not the entire dataset.
  - GROUP BY reduce all records found for the matching group to a single record.
  - SPLIT-APPLY-COMBINE strategy.
- - 
+ - ORDER BY comes AFTER GROUP BY.
  
 */
 
