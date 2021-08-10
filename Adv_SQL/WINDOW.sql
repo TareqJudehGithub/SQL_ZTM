@@ -14,7 +14,7 @@ WINDOW functions
 	 - PARITION BY draws more insights and deeper conclusions.
  
  - ORDER BY inside windowfunctions
- 	- 
+ 
 */
 
 
@@ -58,4 +58,53 @@ FROM salaries
 GROUP BY 1
 
 
+/* =================== */
+-- Get the current salary of an employee, showing his/her current department as well.
 
+-- DISTINCT returns only one value of emp_no
+SELECT	DISTINCT emp.emp_no AS Id,
+ 		emp.first_name ||' '||emp.last_name AS emp_name,
+ 		dep.dept_name,
+		LAST_VALUE(sal.from_date) OVER(
+			PARTITION BY emp.emp_no
+			ORDER BY sal.from_date
+			RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+		),
+		LAST_VALUE(sal.salary) OVER(
+ 			PARTITION BY sal.emp_no
+			-- order that partition by from_date
+ 			ORDER BY sal.from_date
+			-- Framing: against that range (the query result in OVER()) go between
+			-- everything that came before and everything that comes after.
+			RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING 
+		) AS current_salary
+FROM employees AS emp
+JOIN salaries AS sal USING(emp_no)
+JOIN dept_emp AS emp_dep USING(emp_no)
+JOIN departments AS dep
+ON emp_dep.dept_no = dep.dept_no
+ORDER BY emp.emp_no;
+
+
+
+-- GET me starting salary for employee 10001
+SELECT	
+	DISTINCT emp.emp_no AS Id,
+	emp.first_name ||''||emp.last_name AS emp_name,
+	FIRST_VALUE(sal.salary) OVER(
+		PARTITION BY emp.emp_no 
+		ORDER BY sal.from_date	
+	RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+	) AS max_salary,
+	FIRST_VALUE(sal.from_date) OVER(
+		PARTITION BY emp.emp_no
+		ORDER BY sal.from_date
+		RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+	) AS from_date
+	
+FROM employees AS emp
+JOIN salaries AS sal USING(emp_no)
+JOIN dept_emp AS emp_dep USING(emp_no)
+JOIN departments AS dep
+ON emp_dep.dept_no = dep.dept_no
+WHERE emp.emp_no = 10001;
