@@ -3,7 +3,7 @@
 Indexes
  - An index is construct to improve query performance.
  - An index is like a content to help us find data faster.
- - An index speeds us queries.
+ - An index speeds us queries, it is useful against slow queries.
  - An index slows down data insertion and updates.
  
  Types on indexes
@@ -40,6 +40,22 @@ Indexes
   - Against tables that are updated frequently. The system will be spending lots of time re-indexing.
   - Against columns that contain null values, that will hurt the indexing speed.
   - Against columns that have large values, like comments columns.
+ 
+ When do I use a specific type of index?
+  Postgres provides several types of indexes:
+   - B-TREE 
+   	  - The default algorithm
+	  - speeds queries
+	  - best used for comparisons with logical operators < > <= >= = BETWEEN IN IS NULL IS NOT NULL
+	  
+   - HASH
+      - Can only handle equality checks = oprations
+   - GIN
+      - Generalized inverted index
+	  - Best use when multiple values are stored in a single field (Array type)
+   - GIST
+      - Useful in indexing geometric data and full-text search.
+  Each index type uses a different type of algorithm.
 */
 
 -- Create an index
@@ -49,7 +65,6 @@ ON table_name (column1, column2, column3,.. );
 -- we specify which column(s)
 
 
--- When do I use a specific type of index?
 
 
 
