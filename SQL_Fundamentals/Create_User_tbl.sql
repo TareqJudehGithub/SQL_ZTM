@@ -3,7 +3,7 @@ CREATE TABLE "User" (
   name varchar(255) NOT NULL,
   lastName varchar(255) NOT NULL,
   dob date NOT NULL,
-  sex varchar(1) NOT NULL,
+  gender varchar(1) NOT NULL,
   role varchar(255) NOT NULL,
   PRIMARY KEY (id)
 );
